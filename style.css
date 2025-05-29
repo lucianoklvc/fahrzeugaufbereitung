@@ -1,51 +1,82 @@
-
-/* Grundlegende Styles */
+/* Reset & Basics */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #f9f9f9;
   color: #222;
   line-height: 1.6;
 }
 
+/* Container */
 .container {
-  width: 90%;
   max-width: 900px;
-  margin: auto;
-  padding: 20px 0;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* Header */
 header {
   background: #111;
   color: white;
-  text-align: center;
-  padding: 60px 20px;
+  padding: 20px 0;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header h1 {
   font-weight: 700;
-  font-size: 2.8rem;
-  margin-bottom: 10px;
+  font-size: 1.8rem;
 }
 
-header p {
-  font-size: 1.2rem;
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #ff6600;
+}
+
+/* Hero */
+.hero {
+  background: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
 .btn {
-  display: inline-block;
   background: #ff6600;
   color: white;
-  padding: 12px 30px;
+  padding: 14px 30px;
   font-weight: 700;
   border-radius: 30px;
   text-decoration: none;
+  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
@@ -53,15 +84,7 @@ header p {
   background: #e65500;
 }
 
-/* Hauptbereich */
-main {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  padding: 30px 40px;
-  margin-bottom: 40px;
-}
-
+/* Leistungen */
 h2 {
   text-align: center;
   margin-bottom: 30px;
@@ -79,15 +102,15 @@ article h3 {
 }
 
 ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style: disc inside;
+  margin-left: 0;
 }
 
 ul li {
   margin-bottom: 12px;
 }
 
-/* Serviceversprechen hervorheben */
+/* Serviceversprechen */
 .service-verseprechen {
   background: #fffaef;
   border-left: 5px solid #ff6600;
@@ -103,8 +126,8 @@ ul li {
 
 #kontakt a {
   color: #ff6600;
-  text-decoration: none;
   font-weight: 700;
+  text-decoration: none;
 }
 
 #kontakt a:hover {
@@ -124,16 +147,20 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
-  font-weight: 400;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
+  .header-flex {
+    flex-direction: column;
+    text-align: center;
   }
 
-  main {
-    padding: 20px;
+  header nav a {
+    margin: 10px 10px 0 0;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
   }
 }
